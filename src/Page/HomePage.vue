@@ -37,6 +37,7 @@ export default {
 
 <template>
   <navbar />
+  
   <Banner />
   <div class="content-background">
     <!-- Home popular -->

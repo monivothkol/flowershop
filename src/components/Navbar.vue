@@ -10,11 +10,11 @@
         return{
           navBarOpen: false,
           links: [
-            {name: 'Home', link: "#"},
-            {name: 'Categories', link: "#"},
-            {name: 'By color', link: "#"},
-            {name: 'Events', link: "#"},
-            {name: 'Pricing', link: "#"}
+            {name: 'Home', link:"#" ,pageName: "/"},
+            {name: 'Categories', link: "#", pageName: "/categories"},
+            {name: 'By color', link: "#", pageName: "/color"},
+            {name: 'Events', link: "#", pageName: "/eventpage"},
+            {name: 'Pricing', link: "#", pageName: "/pricing"}
           ]
         }
       },
@@ -76,16 +76,19 @@
         <ul class="md:flex flex flex-col font-medium p-4 md:p-0 mt-4 space-x-8  md:flex-row md:mt-0"
             :class="navBarOpen ? 'flex flex-col item-end :bg-gray-900 bg-gray-700 items-end w-4/5 rounded-2xl' : 'hidden'"
         >
-          <li v-for="link in links" class="hover:bg-sky-700 rounded-xl md:w-auto w-full text-right">
-            <a :href="link.link" class="block py-2 px-2 text-white ">{{link.name}}</a>
-          </li>
+        <li v-for="link in links" class="hover:bg-sky-700 rounded-xl md:w-auto w-full text-right">
+          <router-link :to="link.pageName" class="block py-2 px-2 text-white ">{{link.name}}</router-link>
+        </li>
+       
         </ul>
       </div>
     </div>
   </nav>
+  <router-view/>
+        
 
 
-</div>
+</div>  
 
 
 </template>
