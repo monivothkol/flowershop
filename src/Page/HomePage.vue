@@ -36,8 +36,7 @@ export default {
 </script>
 
 <template>
-  <navbar />
-  
+
   <Banner />
   <div class="content-background">
     <!-- Home popular -->

@@ -4,5 +4,5 @@
 
 
 <template>
-    <p>hello this is event</p>
+    <p>hello pricing</p>
 </template>
