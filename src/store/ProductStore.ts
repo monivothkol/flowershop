@@ -1,11 +1,17 @@
 import { defineStore } from 'pinia';
 import { ref, computed } from 'vue';
 
+export interface Product {
+  title: string;
+  description: string;
+  price: number;
+  image: string;
+}
 
 export const productStore = defineStore('counter', () => {
     // const count = ref(0)
     const name = ref('Eduardo')
-    const productList = ref([])
+    const productList = ref<Product[]>([]);
 
      async function fetchProduct() {
       try {
