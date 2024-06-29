@@ -5,7 +5,8 @@
     "vitest.config.*",
     "cypress.config.*",
     "nightwatch.conf.*",
-    "playwright.config.*"
+    "playwright.config.*",
+    
   ],
   "compilerOptions": {
     "composite": true,
@@ -16,5 +17,6 @@
     "moduleResolution": "Bundler",
     "types": ["node"],
     "allowJs": true,
-  }
+  },
+  
 }
