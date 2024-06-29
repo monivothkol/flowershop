@@ -1,9 +1,9 @@
 <script setup lang="ts">
 import { ref, onMounted } from 'vue'
-import Navbar from '../components/Navbar.vue'
-import Banner from '../components/Banner.vue'
-import ItemCard from '../components/ItemCard.vue'
-import FooterSection from '../components/FooterSection.vue'
+import Navbar from '@/components/Navbar.vue'
+import Banner from '@/components/Banner.vue'
+import ItemCard from '@/components/ItemCard.vue'
+import FooterSection from '@/components/FooterSection.vue'
 import {productStore}from '@/store/ProductStore.ts'
 
 
