@@ -4,7 +4,7 @@ import ButtonCustom from '../components/ButtonCustom.vue'
 export default {
   data() {
     return {
-      images: [{ banner: '../src/assets/pic/FloweRose.png' }],
+      images: [{ banner: '@/assets/pic/FloweRose.png' }],
 
       bannerText: {
         bannerTitle: "Enjoy your shopping in your resting time",
@@ -35,7 +35,7 @@ export default {
 
 <style>
 .banner-background {
-  background-image: url('../src/assets/pic/FloweRose.png');
+  background-image: url('@/assets/pic/FloweRose.png');
   height: 600px;
   background-repeat: no-repeat;
   background-size: cover;
