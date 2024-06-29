@@ -18,6 +18,10 @@ export default {
     description: {
       type: String,
       default: 'No description provided'
+    },
+    image:{
+      type: String,
+      default: '#'
     }
   },
   components: {
@@ -27,8 +31,11 @@ export default {
 </script>
 
 <template>
-  <div class="w-72 max-w-72 h-auto bg-white rounded overflow-hidden shadow-lg flex flex-col relative">
-    <img class="w-full" src="../assets/pic/card-top.png" />
+  <div class="w-72 max-w-72 h-auto bg-white rounded-xl overflow-hidden flex flex-col relative">
+    <div class="h-64 w-full overflow-hidden p-4 flex justify-center items-center">
+        <img class="w-48 h-full" :src="image" />
+      </div>
+
     <div class="px-6 py-4 mb-10">
       <div class="font-bold text-sm mb-2 max-h-10 overflow-hidden">{{ `${this.title}` }}</div>
       <p class="inline-block text-gray-700 text-base max-h-16 overflow-hidden text-xs">

@@ -14,6 +14,7 @@
   },
   "dependencies": {
     "@fortawesome/vue-fontawesome": "^3.0.8",
+    "pinia": "^2.1.7",
     "vue": "^3.4.29",
     "vue-router": "^4.4.0"
   },
@@ -33,6 +34,6 @@
     "typescript": "~5.4.0",
     "vite": "^5.3.1",
     "vite-plugin-vue-devtools": "^7.3.1",
-    "vue-tsc": "^2.0.21"
+    "vue-tsc": "^2.0.22"
   }
 }

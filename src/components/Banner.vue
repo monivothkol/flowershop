@@ -7,9 +7,9 @@ export default {
       images: [{ banner: '../src/assets/pic/FloweRose.png' }],
 
       bannerText: {
-        bannerTitle: 'Every meaining contain in flower. Choose wisely',
+        bannerTitle: "Enjoy your shopping in your resting time",
         subBannerText:
-          'Flowers are symbolic of beauty, love and tranquillity. They form the soul of a garden and convey the message of nature to man. Flowers and objects of aesthetic, ornamental, social, religious and cultural value. They are used for conveying love, happiness, grief, mourning...'
+          "We offer free deliver in Phnom Penh area. Order today, we'll send out today! <br> No waiting, save your time."
       },
       
     }
@@ -25,7 +25,7 @@ export default {
     <div class="banner-background p-48 blur-sm"></div>
     <div class="w-2/5 blur-0 absolute top-40 left-60">
       <h3 class="text-white text-5xl pr-10 leading-tight">{{ bannerText.bannerTitle }}</h3>
-      <p class="text-white mt-10 w-auto">{{ bannerText.subBannerText }}</p>
+      <p class="text-white mt-10 w-auto" v-html="bannerText.subBannerText"></p>
       <ButtonCustom class="mt-5 text-white">Shop Now</ButtonCustom>
 
     </div>
