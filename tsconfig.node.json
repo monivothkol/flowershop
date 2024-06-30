@@ -8,8 +8,9 @@
     "playwright.config.*",
     "vite.config.ts",
     "vite.config.vue",
-    "src/**/*.ts"
-  ],
+    "src/**/*.ts",
+    "src/**/*.vue"
+, "src/Router.js"  ],
   "compilerOptions": {
     "composite": true,
     "noEmit": true,

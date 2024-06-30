@@ -3,10 +3,10 @@ import {ref}from 'vue'
 const navBarOpen = ref(false)
 const links = [
   { name: 'Home', link: '/home' },
-  { name: 'Men', link: '/categories' },
-  { name: 'Women', link: '/color' },
-  { name: 'Accessory', link: '/eventpage' },
-  { name: 'Trending Event', link: '/pricing' }
+  { name: 'Men', link: '/men' },
+  { name: 'Women', link: '/women' },
+  { name: 'Accessory', link: '/accessory' },
+  { name: 'Trending Event', link: '/trendingevent' }
 ]
 
 const openMenu = () => {
