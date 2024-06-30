@@ -17,7 +17,7 @@ export const productStore = defineStore('counter', () => {
      async function fetchProduct() {
       try {
         const res = await fetch('https://fakestoreapi.com/products')
-        const data = await res.json()
+        const data = await res.json() as Product[]; 
         productList.value = data
         console.log(productList.value[0])
       } catch (error) {
