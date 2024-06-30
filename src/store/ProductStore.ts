@@ -1,5 +1,5 @@
 import { defineStore } from 'pinia';
-import { ref, computed } from 'vue';
+import { ref, computed, onMounted } from 'vue';
 
 export interface Product {
   title: string;
@@ -13,6 +13,7 @@ export const productStore = defineStore('counter', () => {
     const name = ref('Eduardo')
     const productList = ref<Product[]>([]);
 
+
      async function fetchProduct() {
       try {
         const res = await fetch('https://fakestoreapi.com/products')
@@ -23,6 +24,10 @@ export const productStore = defineStore('counter', () => {
         console.error('Error fetching products:', error)
       }
     }
+    onMounted(() => {
+      fetchProduct()
+    })
     return { name, productList, fetchProduct }
 
   })
+

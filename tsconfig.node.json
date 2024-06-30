@@ -19,6 +19,10 @@
     "moduleResolution": "Bundler",
     "types": ["node"],
     "allowJs": true,
+    "paths": {
+      "@/*": ["./src/*"]
+    },
   },
+
   
 }

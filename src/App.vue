@@ -8,10 +8,11 @@ import Navbar from './components/Navbar.vue'
 
 <template>
 
-
-      
-    <Navbar />
-    <router-view/>
+    <div class="overflow-hidden">
+        <Navbar />
+        <router-view/>
+    </div>
+    
 
     <!-- <HomePage /> -->
    

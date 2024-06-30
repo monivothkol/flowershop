@@ -21,12 +21,15 @@ export default {
 </script>
 
 <template>
-  <div class="w-full relative">
-    <div class="banner-background p-48 blur-sm"></div>
-    <div class="w-2/5 blur-0 absolute top-40 left-60">
-      <h3 class="text-white text-5xl pr-10 leading-tight">{{ bannerText.bannerTitle }}</h3>
-      <p class="text-white mt-10 w-auto" v-html="bannerText.subBannerText"></p>
-      <ButtonCustom class="mt-5 text-white">Shop Now</ButtonCustom>
+  <div class="w-auto relative">
+    <div class="banner-background p-8 bg-center w-full h-96 bg-black"></div>
+    <div class="absolute top-14 left-0 w-full flex items-center flex-col p-4 md:w-2/4 md:ml-12 md:items-start">
+      <!-- <h3 class="text-white text-5xl pr-10 leading-tight md:text-xl lg:text-2xl">{{ bannerText.bannerTitle }}</h3> -->
+      
+      <h3 class="text-white text-3xl text-center md:text-left ">{{ bannerText.bannerTitle }}</h3>
+
+      <p class="text-white mt-5 text-center md:text-left" v-html="bannerText.subBannerText"></p>
+      <ButtonCustom class="mt-5 text-white w-2/4 ">Shop Now</ButtonCustom>
 
     </div>
     
@@ -38,6 +41,6 @@ export default {
   background-image: url('@/assets/pic/FloweRose.png');
   height: 600px;
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: contain;
 }
 </style>

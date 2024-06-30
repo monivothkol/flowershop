@@ -33,10 +33,11 @@ export default {
 </script>
 
 <template>
-  <div class="wave h-96 relative">
-    <div class="w-3/4 grid grid-cols-4  absolute top-24 left-40">
-      <div class="col-span-1 p-4 mr-10 overflow-hidden border-r border-blue">
-        <h3 class="text-bold text-2xl pb-2">Contact</h3>
+  <div class="wave h-96 md:relative">
+    <div class="md:grid md:grid-cols-3 md:absolute md:top-36   md:left-10">
+      <!-- contact -->
+      <div class="bg-pink-200  p-2 md:bg-transparent">
+        <h3 class="text-bold text-2xl pb-2 underline">Contact</h3>
         <ul>
           <li
             class="flex flex-row"
@@ -48,7 +49,7 @@ export default {
         </ul>
         <ul class="flex">
           <li
-            class="px-2 py-6"
+            class="px-2"
             v-for="(socialfooter, index) in socialList"
             :key="socialfooter.name + 'index'"
           >
@@ -58,9 +59,9 @@ export default {
           </li>
         </ul>
       </div>
-
-      <div class="col-span-3 p-4">
-        <h3 class="text-bold text-2xl pb-2">Store</h3>
+        <!-- store -->
+      <div class="bg-pink-200 p-2 pb-10 md:bg-transparent xl:p-0 xl:pl-20 ">
+        <h3 class="text-bold text-2xl pb-2 pt-6 underline">Store</h3>
         <ul>
           <li
             class="flex flex-row"
