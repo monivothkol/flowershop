@@ -1,7 +1,9 @@
 import { defineStore } from 'pinia';
 import { ref, computed, onMounted } from 'vue';
+import { useCartStore } from '@/store/CartStore';
 
 export interface Product {
+  id: number;
   title: string;
   description: string;
   price: number;
@@ -10,8 +12,9 @@ export interface Product {
 
 export const productStore = defineStore('counter', () => {
     // const count = ref(0)
-    const name = ref('Eduardo')
+    // const name = ref('Eduardo')
     const productList = ref<Product[]>([]);
+    const cartStore = useCartStore();
 
 
      async function fetchProduct() {
@@ -19,7 +22,6 @@ export const productStore = defineStore('counter', () => {
         const res = await fetch('https://fakestoreapi.com/products')
         const data = await res.json() as Product[]; 
         productList.value = data
-        console.log(productList.value[0])
       } catch (error) {
         console.error('Error fetching products:', error)
       }
@@ -27,7 +29,7 @@ export const productStore = defineStore('counter', () => {
     onMounted(() => {
       fetchProduct()
     })
-    return { name, productList, fetchProduct }
+    return { name, productList, fetchProduct, addToCart: cartStore.addToCart }
 
   })
 

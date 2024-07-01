@@ -85,6 +85,7 @@ const openMenu = () => {
                     link.name
                   }}</router-link>
                 </li>
+                <router-link to="/cart"><i class="fa-solid fa-cart-shopping text-white"></i></router-link>
               </ul>
             </div>
           </div>
