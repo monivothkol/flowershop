@@ -29,7 +29,7 @@ export const productStore = defineStore('counter', () => {
     onMounted(() => {
       fetchProduct()
     })
-    return { name, productList, fetchProduct, addToCart: cartStore.addToCart }
+    return { productList, fetchProduct, addToCart: cartStore.addToCart }
 
   })
 
