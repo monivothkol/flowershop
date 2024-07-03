@@ -1,5 +1,6 @@
 <script setup>
 import {ref}from 'vue'
+import Register from '@/Page/Register.vue'
 const navBarOpen = ref(false)
 const links = [
   { name: 'Home', link: '/home' },
@@ -85,7 +86,10 @@ const openMenu = () => {
                     link.name
                   }}</router-link>
                 </li>
-                <router-link to="/cart"><i class="fa-solid fa-cart-shopping text-white"></i></router-link>
+                <router-link to="/cart" class="flex items-center"><i class="fa-solid fa-cart-shopping text-white text-center"></i></router-link>
+                <router-link to="/register" class="text-white text-xl text-center flex items-center invisible">Register</router-link>
+                <router-link to="/login" class="text-white text-xl text-center flex items-center invisible">Login</router-link>
+
               </ul>
             </div>
           </div>

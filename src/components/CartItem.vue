@@ -75,7 +75,7 @@ const totalPrice = computed(() => {
     </div>
     
     <div class="flex justify-center">
-      <h1>USD {{ totalPrice }}</h1>
+      <h1>USD {{totalPrice }}</h1>
     </div>
   </div>
 </template>

@@ -19,6 +19,8 @@ const useStore = productStore()
             :description="''"
             :price="product.price"
             :image="product.image"
+            :id="product.id"
+
             class="max-w-full scale-90"
         />
         </div>
@@ -36,6 +38,8 @@ const useStore = productStore()
             :description="''"
             :price="product.price"
             :image="product.image"
+            :id="product.id"
+
             class="max-w-full scale-90"
         />
         </div>

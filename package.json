@@ -5,7 +5,6 @@
   "type": "module",
   "scripts": {
     "clean": "rimraf dist",
-
     "dev": "vite",
     "build": "run-p type-check \"build-only {@}\" --",
     "preview": "vite preview",
@@ -16,6 +15,7 @@
   },
   "dependencies": {
     "@fortawesome/vue-fontawesome": "^3.0.8",
+    "firebase": "^10.12.2",
     "pinia": "^2.1.7",
     "vue": "^3.4.29",
     "vue-router": "^4.4.0"
