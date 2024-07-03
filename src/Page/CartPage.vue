@@ -2,26 +2,20 @@
 <template>
 
       <div class="bg-gray-300 h-screen pb-10">
-        <div class="w-10/12 mx-auto relative">
+        <div class="w-10/12 mx-auto">
           <h2 class="text-center text-white text-3xl p-4 bg-gray-700 rounded-b-3xl">Shopping Cart</h2>
-          <div v-if="cart.length > 0">
-            <div class="rounded-3xl mx-auto bg-white w-6/12">
-              <div class="h-12 grid grid-cols-7 items-center">
-              <div class="col-span-3 overflow-hidden  flex justify-center items-center">
-                <p>Product</p>
-              </div>
-              <div>
-                
-              </div>
-              <div class="text-center">
-                <p>Price</p>
-              </div>
-              <div class="text-center">
-                <p>Quantity</p>
-              </div>
-              <div  class="text-center">
-                <p>Total price</p>
-              </div>
+          <div v-if="cart.length > 0" class="mt-4 flex flex-col items-center">
+            <div class="rounded-3xl w-full mx-auto bg-white lg:w-10/12 ">
+              <div class="flex flex-row justify-between py-4 px-4">
+                <div>
+                  <h1>Product</h1>
+                </div>
+                <div>
+                  <h1>Detail</h1>
+                </div>
+                <div>
+                  <h1>Total</h1>
+                </div>
               </div>
               
               <div v-for="(item, index) in cart" :key="`product-key${index}`">
@@ -37,7 +31,7 @@
               
             </div>
 
-            <div class="bg-white w-2/12 absolute right-28 mt-1 top-16 p-4 rounded-xl">
+            <div class="bg-white w-full mt-2 p-4 rounded-xl md:w-7/12">
               <h1 class="text-bold text-lg pb-2">Your order summary</h1>
               <div class="grid grid-cols-2">
                 <p>Sub total</p>
