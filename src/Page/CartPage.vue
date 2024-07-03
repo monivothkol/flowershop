@@ -1,11 +1,11 @@
 <!-- CartPage.vue -->
 <template>
 
-      <div class="bg-gray-300 h-screen pb-10">
-        <div class="w-10/12 mx-auto">
+      <div class="bg-gray-300  pb-10">
+        <div class="w-10/12 mx-auto xl:w-7/12 h-auto">
           <h2 class="text-center text-white text-3xl p-4 bg-gray-700 rounded-b-3xl">Shopping Cart</h2>
           <div v-if="cart.length > 0" class="mt-4 flex flex-col items-center">
-            <div class="rounded-3xl w-full mx-auto bg-white lg:w-10/12 ">
+            <div class="rounded-3xl w-full h-auto  mx-auto bg-white lg:w-10/12 xl:w-8/12 ">
               <div class="flex flex-row justify-between py-4 px-4">
                 <div>
                   <h1>Product</h1>
@@ -34,20 +34,20 @@
             <div class="bg-white w-full mt-2 p-4 rounded-xl md:w-7/12">
               <h1 class="text-bold text-lg pb-2">Your order summary</h1>
               <div class="grid grid-cols-2">
-                <p>Sub total</p>
-                <p>{20la}</p>
+                <p>Total</p>
+                <p>{{ totalPrice.toFixed(2) }} USD</p>
               </div>
               <div class="grid grid-cols-2">
                 <p>Tax</p>
-                <p>{20la}</p>
+                <p>10%</p>
               </div>
               <div class="grid grid-cols-2">
                 <p>Discount</p>
-                <p>{10la}</p>
+                <p>0.00</p>
               </div>
               <div class="grid grid-cols-2 pt-4 items-center">
                 <p>Total</p>
-                <p class="text-bold text-xl">{100la}</p>
+                <p class="text-bold text-xl">{{(totalPrice + totalPrice*0.1).toFixed(2)}} USD</p>
               </div>
 
             </div>
@@ -69,9 +69,11 @@
   <script setup lang="ts">
   import { useCartStore } from '@/store/CartStore';
   import CartItem from '@/components/CartItem.vue';
+  import {computed }from 'vue'
   const cartStore = useCartStore();
   const { cart, removeFromCart } = cartStore;
-  </script>
+  const totalPrice = computed(() => cartStore.totalFinalPrice) as unknown as number;
+</script>
   
   <style scoped>
   @import '../css/output.css';

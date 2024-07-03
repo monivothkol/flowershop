@@ -1,6 +1,7 @@
 <script setup>
 import {ref}from 'vue'
 import Register from '@/Page/Register.vue'
+import { useCartStore } from '@/store/CartStore';
 const navBarOpen = ref(false)
 const links = [
   { name: 'Home', link: '/home' },
@@ -86,7 +87,11 @@ const openMenu = () => {
                     link.name
                   }}</router-link>
                 </li>
-                <router-link to="/cart" class="flex items-center"><i class="fa-solid fa-cart-shopping text-white text-center"></i></router-link>
+                <router-link to="/cart" class="flex items-center relative"><i class="fa-solid fa-cart-shopping text-white text-center"></i>
+                  <span v-if="useCartStore().cart.length > 0" class="absolute top-0 -right-4 bg-red-500 text-white rounded-full w-4 h-4 flex items-center justify-center text-xs">
+                    {{ useCartStore().cart.length }}
+                  </span>
+                </router-link>
                 <router-link to="/register" class="text-white text-xl text-center flex items-center invisible">Register</router-link>
                 <router-link to="/login" class="text-white text-xl text-center flex items-center invisible">Login</router-link>
 
