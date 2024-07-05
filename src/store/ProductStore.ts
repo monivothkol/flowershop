@@ -10,14 +10,27 @@ export interface Product {
   image: string;
 }
 
+export interface Accessory { 
+  id: number;
+  title: string;
+  description: string;
+  price: number;
+  image: string;
+}
+
 export const productStore = defineStore('counter', () => {
     // const count = ref(0)
     // const name = ref('Eduardo')
     const productList = ref<Product[]>([]);
+    const accessoryList = ref<Accessory[]>([]);
+    const menClothing = ref<Accessory[]>([]);
+    const womenClothing = ref<Accessory[]>([]);
+    const electronic = ref<Accessory[]>([]);
+
     const cartStore = useCartStore();
 
 
-     async function fetchProduct() {
+    async function fetchProduct() {
       try {
         const res = await fetch('https://fakestoreapi.com/products')
         const data = await res.json() as Product[]; 
@@ -26,10 +39,53 @@ export const productStore = defineStore('counter', () => {
         console.error('Error fetching products:', error)
       }
     }
+
+    async function fetchAccessory() {
+      try {
+        const res = await fetch('https://fakestoreapi.com/products/category/jewelery')
+        const data = await res.json() as Accessory[]; 
+        accessoryList.value = data
+      } catch (error) {
+        console.error('Error fetching products:', error)
+      }
+      console.log(`this is` + accessoryList)
+    }
+    async function fetchMen() {
+      try {
+        const res = await fetch("https://fakestoreapi.com/products/category/men's%20clothing")
+        const data = await res.json() as Accessory[]; 
+        menClothing.value = data
+      } catch (error) {
+        console.error('Error fetching products:', error)
+      }
+    }
+    async function fetchWomen() {
+      try {
+        const res = await fetch("https://fakestoreapi.com/products/category/women's%20clothing")
+        const data = await res.json() as Accessory[]; 
+        womenClothing.value = data
+      } catch (error) {
+        console.error('Error fetching products:', error)
+      }
+    }
+
+    async function fetchElectronic(){
+      try {
+        const res  = await fetch("https://fakestoreapi.com/products/category/electronics");
+        const data = await res.json();
+        electronic.value = data
+      } catch(error){
+        console.error('error fetching electronic: ', error)
+      }
+    }
     onMounted(() => {
-      fetchProduct()
+      fetchProduct();
+      fetchAccessory();
+      fetchMen();
+      fetchWomen();
+      fetchElectronic();
     })
-    return { productList, fetchProduct, addToCart: cartStore.addToCart }
+    return { productList, accessoryList, menClothing, womenClothing, electronic, fetchProduct, fetchAccessory, addToCart: cartStore.addToCart }
 
   })
 
