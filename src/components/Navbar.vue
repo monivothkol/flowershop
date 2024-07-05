@@ -1,5 +1,5 @@
 <script setup>
-import {ref}from 'vue'
+import {ref, onMounted}from 'vue'
 import Register from '@/Page/Register.vue'
 import { useCartStore } from '@/store/CartStore';
 const navBarOpen = ref(false)
@@ -15,6 +15,38 @@ const openMenu = () => {
   navBarOpen.value = !navBarOpen.value;
   console.log(`Menu open status: ${navBarOpen.value}`);
 };
+
+// ..........................................................................................................................................
+// for signout
+
+import {useRouter} from 'vue-router'
+import { getAuth, onAuthStateChanged, signOut } from 'firebase/auth';
+let auth;
+const isLoggedIn = ref(false);
+const router = useRouter();
+
+onMounted(()=>{
+    auth = getAuth();
+    onAuthStateChanged(auth, (user)=>{
+        if(user){
+            isLoggedIn.value = true;
+            console.log(isLoggedIn.value)
+        }
+        else isLoggedIn.value = false;
+    });
+    
+    
+})
+const handleSignOut = () => {
+    signOut(auth).then(()=>{
+        router.push("/");
+    })
+}
+
+
+// ................................................................................................................................................
+
+
 
 </script>
 
@@ -92,8 +124,12 @@ const openMenu = () => {
                     {{ useCartStore().cart.length }}
                   </span>
                 </router-link>
-                <router-link to="/register" class="text-white text-xl text-center flex items-center invisible">Register</router-link>
-                <router-link to="/login" class="text-white text-xl text-center flex items-center invisible">Login</router-link>
+                <router-link v-if="!isLoggedIn" to="/login" class="text-white text-xl text-center flex items-center">Login</router-link>
+
+                <router-link v-if="!isLoggedIn" to="/register" class="text-white text-xl text-center flex items-center">Register</router-link>
+                <router-link v-if="isLoggedIn" to="/userinfo" class="text-white text-xl text-center flex items-center">UserInfo</router-link>
+                <button v-if="isLoggedIn" @click="handleSignOut">Sign Out</button>
+
 
               </ul>
             </div>

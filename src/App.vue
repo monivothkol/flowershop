@@ -2,7 +2,9 @@
 
 // import HomePage from './Page/HomePage.vue'
 // import EventPage from './Page/EventPage.vue'
+import { onMounted, ref } from 'vue';
 import Navbar from './components/Navbar.vue'
+import { getAuth, onAuthStateChanged, signOut } from 'firebase/auth';
 
 </script>
 
@@ -12,11 +14,6 @@ import Navbar from './components/Navbar.vue'
         <Navbar />
         <router-view/>
     </div>
-    
-
-    <!-- <HomePage /> -->
-   
-
 
 </template>
 
