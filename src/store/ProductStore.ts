@@ -72,7 +72,7 @@ export const productStore = defineStore('counter', () => {
     async function fetchElectronic(){
       try {
         const res  = await fetch("https://fakestoreapi.com/products/category/electronics");
-        const data = await res.json();
+        const data = await res.json() as Accessory[];
         electronic.value = data
       } catch(error){
         console.error('error fetching electronic: ', error)
