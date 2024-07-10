@@ -53,7 +53,7 @@ const handleSignOut = () => {
 <template>
   <div id="app">
     <div id="nav">
-      <div class="mx-auto dark">
+      <div class="mx-auto dark fixed w-full z-50">
         <nav class="bg-white border-xl border-gray-200 dark:bg-gray-900 dark:border-gray-700">
           <div
             class="max-w-screen-xl flex flex-wrap md:flex-row items-center justify-between mx-auto p-4 lg:pl-10 lg:pr-10 md:pl-10 md:pr-10"
@@ -128,7 +128,7 @@ const handleSignOut = () => {
 
                 <router-link v-if="!isLoggedIn" to="/register" class="text-white text-xl text-center flex items-center">Register</router-link>
                 <router-link v-if="isLoggedIn" to="/userinfo" class="text-white text-xl text-center flex items-center">UserInfo</router-link>
-                <button v-if="isLoggedIn" @click="handleSignOut">Sign Out</button>
+                <button v-if="isLoggedIn" @click="handleSignOut" class="text-white">Sign Out</button>
 
 
               </ul>
