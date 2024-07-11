@@ -1,25 +1,17 @@
-<script>
+<script setup>
 import ButtonCustom from '../components/ButtonCustom.vue'
 import bannerImage from '@/assets/pic/FloweRose.png'
 
 
-export default {
-  data() {
-    return {
-      images: { banner: bannerImage },
 
-      bannerText: {
+    const  images = { banner: bannerImage }
+
+    const  bannerText = {
         bannerTitle: "Enjoy your shopping in your resting time",
         subBannerText:
           "We offer free deliver in Phnom Penh area. Order today, we'll send out today! <br> No waiting, save your time."
-      },
-      
-    }
-  },
-  components: {
-        ButtonCustom
-    }
-};
+      }
+
 </script>
 
 <template>

@@ -2,17 +2,12 @@
 
 import { createApp } from 'vue';
 import router from './Router.js';
-import { createPinia } from 'pinia'; // Import Pinia
+import { createPinia } from 'pinia';
 import App from './App.vue'
 
-// Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
 
-// Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
   apiKey: "AIzaSyCDYXeyKnrvlw2r0iP0k0KVxemzP78b5OQ",
   authDomain: "onlineshop-24654.firebaseapp.com",
@@ -23,7 +18,7 @@ const firebaseConfig = {
   measurementId: "G-B5JDCTMDC3"
 };
 
-// Initialize Firebase
+
 initializeApp(firebaseConfig);
 const analytics = getAnalytics(initializeApp(firebaseConfig));
 
